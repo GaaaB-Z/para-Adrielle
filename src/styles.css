@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(#ffd1d1, #ff9a9e);
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 30c-10-20-30-10-30 10s30 50 30 50 30-30 30-50-20-30-30-10z" fill="%23ff6f61"%3E%3C/path%3E%3C/svg%3E');
+    background-size: 50px 50px;
+    background-repeat: repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /* Ajuste para os balões ficarem mais baixos */
+    padding-bottom: 20px; /* Distância do fundo */
+    z-index: 1;
+}
+
+.balloon {
+    width: 100px;
+    height: 130px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: float 4s ease-in-out infinite;
+}
+
+.balloon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    z-index: 2;
+}
+
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff6f61;
+    font-family: 'Cursive', sans-serif;
+}
+
+.card p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
